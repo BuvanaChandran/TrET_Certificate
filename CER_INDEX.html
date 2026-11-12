@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrET Certificate - TNSDC</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+<link href="CER_STYLE.css" rel="stylesheet" />
+<!-- <style>
+  :root {
+    --navy: #0d2a52;
+    --gold1: #f6d98a;
+    --gold2: #b8862b;
+    --ink: #2b3a3a;
+    --blue: #14147a;
+    --paper: #f4f4f2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #d9dce2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+  .cert {
+    position: relative;
+    width: 1308px;
+    height: 924px;
+    background: var(--navy);
+    flex-shrink: 0;
+    transform-origin: top center;
+  }
+
+  .corner { position: absolute; width: 150px; height: 150px; background: linear-gradient(135deg, var(--gold1), var(--gold2)); }
+  .tl { top: 0; left: 0; clip-path: polygon(0 0, 100% 0, 0 100%); width: 190px; height: 190px; }
+  .tr { top: 0; right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%); width: 190px; height: 190px; }
+  .bl { bottom: 0; left: 0; clip-path: polygon(0 0, 100% 100%, 0 100%); width: 190px; height: 190px; }
+  .br { bottom: 0; right: 0; clip-path: polygon(100% 0, 100% 100%, 0 100%); width: 190px; height: 190px; }
+
+  .paper {
+    position: absolute;
+    inset: 56px 40px 52px 40px;
+    background:
+      radial-gradient(circle at 30% 20%, #fff 0%, transparent 60%),
+      var(--paper);
+    border: 6px solid;
+    border-image: linear-gradient(135deg, var(--gold1), var(--gold2), var(--gold1)) 1;
+    box-shadow: inset 0 0 40px rgba(0,0,0,.06);
+  }
+  .watermark {
+    position: absolute;
+    top: 52%; left: 50%;
+    transform: translate(-50%, -50%);
+    font: 700 330px 'Noto Serif', serif;
+    color: rgba(13,42,82,.045);
+    letter-spacing: -10px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+
+  .logo { position: absolute; top: 24px; left: 50%; transform: translateX(-50%); text-align: center; }
+  .logo .mark { font: 700 64px/1 Arial Black, Arial, sans-serif; color: #121a8c; letter-spacing: -2px; }
+  .logo .mark .bars { color: #f3b91f; }
+  .logo .tamil { font-size: 15px; letter-spacing: 6px; color: #444; margin-top: 4px; }
+
+  .org {
+    position: absolute; top: 160px; width: 100%;
+    text-align: center;
+    font: 700 27px 'Noto Serif', Georgia, serif;
+    color: #111;
+    letter-spacing: .3px;
+  }
+  .test {
+    position: absolute; top: 218px; width: 100%;
+    text-align: center;
+    font-size: 17px; font-weight: 500; color: var(--blue);
+    letter-spacing: 1px;
+  }
+
+  .row { position: absolute; left: 52px; right: 52px; display: flex; align-items: baseline; font-size: 20px; color: var(--ink); letter-spacing: .8px; white-space: nowrap; }
+  .line {
+    flex: none;
+    border: 0;
+    border-bottom: 2px dotted #111;
+    min-height: 22px;
+    padding: 0 6px;
+    font-weight: 500;
+    color: #000;
+    outline: none;
+    text-align: center;
+  }
+  .line:focus { background: rgba(255, 235, 150, .35); }
+  .r1 { font-size: 18px; justify-content: space-between; }
+  .gap { width: 8px; flex: none; }
+
+ 
+  .seal { position: absolute; width: 150px; height: 175px; }
+  .seal .rosette {
+    position: absolute; top: 0; left: 0; width: 140px; height: 140px; border-radius: 50%;
+    background: conic-gradient(from 0deg, #f6d98a, #b8862b, #f6d98a, #b8862b, #f6d98a, #b8862b, #f6d98a);
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .seal .disc {
+    position: absolute; top: 14px; left: 14px; width: 112px; height: 112px; border-radius: 50%;
+    background: radial-gradient(circle, #1d4a8a, #0a2150);
+    border: 3px solid #e7c670;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; font: 500 11px/1.25 'Noto Serif', serif; text-align: center;
+  }
+  .seal .stars { color: #f6d98a; font-size: 8px; letter-spacing: 2px; }
+  .ribbon { position: absolute; top: 112px; width: 34px; height: 72px; background: linear-gradient(#1b4f9c, #0a2559); }
+  .ribbon.a { left: 38px; transform: rotate(14deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%); z-index: -1; }
+  .ribbon.b { left: 76px; transform: rotate(-14deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%); z-index: -1; }
+
+  .sign { position: absolute; width: 240px; text-align: center; }
+  .sign .line { display: block; width: 100%; margin-bottom: 14px; }
+  .sign span { font-size: 19px; letter-spacing: 2px; color: #111; font-weight: 500; }
+
+  .note { position: absolute; bottom: 62px; width: 100%; text-align: center; color: #222; }
+  .note p { font-size: 11.5px; font-weight: 500; max-width: 920px; margin: 0 auto; line-height: 1.7; }
+  .note .valid { font-size: 16px; margin-top: 8px; font-weight: 400; color: #333; }
+
+  @media print {
+    body { background: none; padding: 0; min-height: 0; }
+    @page { size: 1308px 924px; margin: 0; }
+    .cert { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style> -->
+</head>
+<body>
+
+<div class="cert" id="cert">
+  <div class="corner tl"></div><div class="corner tr"></div>
+  <div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="paper">
+    <div class="watermark">TN</div>
+
+    <div class="logo">
+      <div class="mark">TN Sk<span class="bars">ill</span></div>
+      <div class="tamil">திறன் தமிழ்நாடு</div>
+    </div>
+
+    <div class="org">TAMIL NADU SKILL DEVELOPMENT CORPORATION</div>
+    <div class="test">[ Trainer Eligibility Test -TrET ]</div>
+
+    <div class="row r1" style="top:236px">
+      <div>TrET ID : <span class="line" contenteditable="true" style="display:inline-block;width:200px"></span></div>
+      <div>Date of issue: <span class="line" contenteditable="true" style="display:inline-block;width:200px"></span></div>
+    </div>
+
+    <div class="row" style="top:326px">
+      <span>This is to certify that Mr./Ms.</span><span class="gap"></span>
+      <span class="line" contenteditable="true" style="width:355px"></span>
+      <span class="gap"></span><span>Son /daughter of</span><span class="gap"></span>
+      <span class="line" contenteditable="true" style="width:272px"></span>
+    </div>
+
+    <div class="row" style="top:384px">
+      <span>with Trainer ID</span><span class="gap"></span>
+      <span class="line" contenteditable="true" style="width:222px"></span>
+      <span class="gap"></span><span>has qualified the Trainer Eligibility Test for the job role</span><span class="gap"></span>
+      <span class="line" contenteditable="true" style="width:155px"></span>
+    </div>
+
+    <div class="row" style="top:443px">
+      <span class="line" contenteditable="true" style="width:565px"></span>
+      <span class="gap"></span><span>in the</span><span class="gap"></span>
+      <span class="line" contenteditable="true" style="width:405px"></span>
+      <span class="gap"></span><span>Sector.</span>
+    </div>
+
+    <div class="seal" style="left:525px; top:510px">
+      <div class="ribbon a"></div><div class="ribbon b"></div>
+      <div class="rosette"></div>
+      <div class="disc">
+        <div class="stars">★★★★★</div>
+        <div>CERTIFIED</div><div>BY</div><div>TN SKILL</div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="sign" style="right:100px; top:570px">
+      <span class="line" contenteditable="true"></span>
+      <span>MANAGING DIRECTOR</span>
+    </div>
+
+    <div class="note">
+      <p>Note :This certificate is issued by TNSDC upon qualifying the TrET, solely for the purpose of imparting training to unemployed youth under the Short Term Training (STT) Scheme of TNSDC.</p>
+      <p class="valid">Vaild for 3 years from the date of issue</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+  function fit() {
+    var c = document.getElementById('cert');
+    var s = Math.min(1, (window.innerWidth - 40) / 1308);
+    c.style.transform = 'scale(' + s + ')';
+    c.style.marginBottom = (-(924 * (1 - s))) + 'px';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+</script>
+</body>
+</html>
